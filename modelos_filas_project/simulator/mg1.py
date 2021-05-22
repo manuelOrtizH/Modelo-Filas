@@ -38,5 +38,5 @@ class MG1(object):
         return f'lq: {self.lq}, L: {self.L}, w: {self.w}, wq: {self.wq}, Po: {self.po}, p: {self.p}'
         #Imprimir todo los atributos
 
-m = MG1(0.05, 0.066, 1)
-print(m)
+# m = MG1(0.05, 0.066, 1)
+# print(m)
