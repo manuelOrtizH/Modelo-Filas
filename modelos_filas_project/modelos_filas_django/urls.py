@@ -20,8 +20,5 @@ from simulator import views
 urlpatterns = [
     path('', views.home),
     path('input/', views.input, name='input'),
-    path('mm1_results/', views.mm1Results, name='mm1_results'),
-    path('mms_results/', views.mmsResults, name='mms_results'),
-    path('mmsk_results/', views.mmskResults, name='mmsk_results'),
-    path('mg1_results/', views.mg1Results, name='mg1_results'),
+    path('modelResults/', views.modelResults, name='modelResults'),
 ]

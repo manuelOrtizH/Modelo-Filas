@@ -13,13 +13,16 @@ class MM1(object):
         self.n = n
         self.time = time
         self.p = self.calculateP() #𝜌 
+        #pPer no es un atributo
         self.pPer = round(self.p * 100, 3)
         self.po = self.calculatePo()
         self.poPer = round(self.po * 100,3)
         self.cn = self.calculateCn(n)
-        self.cnPer = round(self.cn * 100, 3)
+        #cnPer no es un atributo
+        #self.cnPer = round(self.cn * 100, 3)
         self.pn = self.calculatePn(n)
-        self.pnPer = round(self.pn * 100, 3)
+        #pnPer no es un atributo
+        #self.pnPer = round(self.pn * 100, 3)
         self.lq = self.calculateLQ()
         self.L = self.calculateL()
         self.wq = self.calculateWq()
@@ -32,10 +35,10 @@ class MM1(object):
         return round(1-self.p, 3)
 
     def calculateCn(self, n):
-        return round(math.pow(self.p, n),3)
+        return [round(math.pow(self.p, x+1),3) for x in range(n)]
 
     def calculatePn(self, n):
-        return round(math.pow(self.p, n)* self.po,3)
+        return [round(math.pow(self.p, x+1)* self.po,3) for x in range(n)]
 
     def calculateLQ(self):
         return round((self.l*self.l)/(self.miu*(self.miu-self.l)),3)

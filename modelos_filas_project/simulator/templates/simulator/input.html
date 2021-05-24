@@ -10,305 +10,303 @@
 
             </figure>
         </div>
+        <form action = "{% url 'modelResults' %}">	
         {% if name_model == 'MM1' %}
-        <form action = "{% url 'mm1_results' %}">	
-            <div class="row p-5">
-                
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">λ</label>
-                        <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="l" placeholder="Lambda">
-                        <label class="text-uppercase text-white">Tasa media de llegadas </label>
-                    </div>
+    
+        <div class="row p-5">
+            
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">λ</label>
+                    <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="l" placeholder="Lambda">
+                    <label class="text-uppercase text-white">Tasa media de llegadas </label>
                 </div>
-                <div class="col text-center"></div>
-                <div class="col text-center"></div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">μ</label>
-                        <input name="miu" value = 0.0  class="bg-light  text-dark form-control" id="miu" placeholder="Miu">
-                        <label class="text-uppercase text-white">Tasa media de servicios </label>
-                    </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center"></div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">μ</label>
+                    <input name="miu" value = 0.0  class="bg-light  text-dark form-control" id="miu" placeholder="Miu">
+                    <label class="text-uppercase text-white">Tasa media de servicios </label>
                 </div>
-                <div class="col text-center"></div>
-                <div class="col text-center"></div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">n</label>
-                        <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="n" placeholder="Número de clientes">
-                        <label class="text-uppercase text-white">Clientes en el sistema </label>
-                    </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center"></div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">n</label>
+                    <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="n" placeholder="Número de clientes">
+                    <label class="text-uppercase text-white">Clientes en el sistema </label>
                 </div>
-                <div class="col text-center"></div>
-                <div class="col text-center"></div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">Tiempo</label>
-                        <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
-                        <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
-                    </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center"></div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">Tiempo</label>
+                    <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
+                    <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
                 </div>
-                
-                <div class="row p-3">
-                    <div class="col text-center">
-                        <div class="form-group row">
-                            <label class="text-uppercase text-white">Cs</label>
-                            <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                            <label class="text-uppercase text-white">Costo del servicio </label>
-                        </div>
-                    </div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center">
-                        <div class="form-group row">
-                            <label class="text-uppercase text-white">Cw</label>
-                            <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                            <label class="text-uppercase text-white">Costo por tiempo de espera </label>
-                        </div>
-                    </div>
-                </div>
-                <blockquote class="text-center blockquote text-warning">
-                    <h3>{{  validation_msg  }} </h3>
-                </blockquote>
-                <button type="submit" name="name_model" value = "MM1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
             </div>
             
-        </form>
+            <div class="row p-3">
+                <div class="col text-center">
+                    <div class="form-group row">
+                        <label class="text-uppercase text-white">Cs</label>
+                        <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Costo del servicio </label>
+                    </div>
+                </div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center">
+                    <div class="form-group row">
+                        <label class="text-uppercase text-white">Cw</label>
+                        <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Costo por tiempo de espera </label>
+                    </div>
+                </div>
+            </div>
+            <blockquote class="text-center blockquote text-warning">
+                <h3>{{  validation_msg  }} </h3>
+            </blockquote>
+            <button type="submit" name="name_model" value = "MM1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
+        </div>
+            
         {% endif %}
         {% if name_model == 'MMS' %}
-        <form action = "{% url 'mms_results' %}">	
-            <div class="row p-5">
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">λ</label>
-                        <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
-                        <label class="text-uppercase text-white">Tasa media de llegadas </label>
-                    </div>
+
+        <div class="row p-5">
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">λ</label>
+                    <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
+                    <label class="text-uppercase text-white">Tasa media de llegadas </label>
                 </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">μ</label>
-                        <input name="miu" value = 0.0 class="bg-light  text-dark form-control" id="k" placeholder="Miu">
-                        <label class="text-uppercase text-white">Tasa media de servicios </label>
-                    </div>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">s</label>
-                        <input type="number" value = 0 name="s" class="bg-light  text-dark form-control" id="k" placeholder="Servidores">
-                        <label class="text-uppercase text-white">Servidores en el sistema</label>
-                    </div>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">n</label>
-                        <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="k" placeholder="Numero de clientes">
-                        <label class="text-uppercase text-white">Clientes en el sistema </label>
-                    </div>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">Tiempo</label>
-                        <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
-                        <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
-                    </div>
-                </div>
-                <div class="row p-3">
-                    <div class="col text-center">
-                        <div class="form-group row">
-                            <label class="text-uppercase text-white">Cs</label>
-                            <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                            <label class="text-uppercase text-white">Costo del servicio </label>
-                        </div>
-                    </div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center">
-                        <div class="form-group row">
-                            <label class="text-uppercase text-white">Cw</label>
-                            <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                            <label class="text-uppercase text-white">Costo por tiempo de espera </label>
-                        </div>
-                    </div>
-                </div>
-                <blockquote class="text-center blockquote text-warning">
-                    <h3>{{  validation_msg  }} </h3>
-                </blockquote>
-                <button type="submit" name="name_model" value = "MMS" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
             </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">μ</label>
+                    <input name="miu" value = 0.0 class="bg-light  text-dark form-control" id="k" placeholder="Miu">
+                    <label class="text-uppercase text-white">Tasa media de servicios </label>
+                </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">s</label>
+                    <input type="number" value = 0 name="s" class="bg-light  text-dark form-control" id="k" placeholder="Servidores">
+                    <label class="text-uppercase text-white">Servidores en el sistema</label>
+                </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">n</label>
+                    <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="k" placeholder="Numero de clientes">
+                    <label class="text-uppercase text-white">Clientes en el sistema </label>
+                </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">Tiempo</label>
+                    <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
+                    <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col text-center">
+                    <div class="form-group row">
+                        <label class="text-uppercase text-white">Cs</label>
+                        <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Costo del servicio </label>
+                    </div>
+                </div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center">
+                    <div class="form-group row">
+                        <label class="text-uppercase text-white">Cw</label>
+                        <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Costo por tiempo de espera </label>
+                    </div>
+                </div>
+            </div>
+            <blockquote class="text-center blockquote text-warning">
+                <h3>{{  validation_msg  }} </h3>
+            </blockquote>
+            <button type="submit" name="name_model" value = "MMS" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
+        </div>
             
-        </form>
+    
         {% endif %}
-        {% if name_model == 'MMSK' %}
-        <form action = "{% url 'mmsk_results' %}">	
-            <div class="row p-5">
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">λ</label>
-                        <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="l" placeholder="Lambda">
-                        <label class="text-uppercase text-white">Tasa media de llegadas </label>
-                    </div>
+        {% if name_model == 'MMSK' %}	
+        <div class="row p-5">
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">λ</label>
+                    <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="l" placeholder="Lambda">
+                    <label class="text-uppercase text-white">Tasa media de llegadas </label>
                 </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">μ</label>
-                        <input name="miu" value = 0.0  class="bg-light  text-dark form-control" id="miu" placeholder="Miu">
-                        <label class="text-uppercase text-white">Tasa media de servicios </label>
-                    </div>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">s</label>
-                        <input type="number" value = 0 name="s" class="bg-light  text-dark form-control" id="s" placeholder="Servidores">
-                        <label class="text-uppercase text-white">Servidores en el sistema </label>
-                    </div>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">k</label>
-                        <input type="number" value = 0 name="k" class="bg-light  text-dark form-control" id="k" placeholder="K">
-                        <label class="text-uppercase text-white">Número máximo de clientes </label>
-                    </div>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">n</label>
-                        <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="n" placeholder="Numero de clientes">
-                        <label class="text-uppercase text-white">Clientes en el sistema </label>
-                    </div>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">Tiempo</label>
-                        <input type="text" name="time" class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                        <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
-                    </div>
-                </div>
-                <div class="row p-3">
-                    <div class="col text-center">
-                        <div class="form-group row">
-                            <label class="text-uppercase text-white">Cs</label>
-                            <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                            <label class="text-uppercase text-white">Costo del servicio </label>
-                        </div>
-                    </div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center">
-                        <div class="form-group row">
-                            <label class="text-uppercase text-white">Cw</label>
-                            <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                            <label class="text-uppercase text-white">Costo por tiempo de espera </label>
-                        </div>
-                    </div>
-                </div>
-                <blockquote class="text-center blockquote text-warning">
-                    <h3>{{  validation_msg  }} </h3>
-                </blockquote>
-                <button type="submit" name="name_model" value = "MMSK" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
             </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">μ</label>
+                    <input name="miu" value = 0.0  class="bg-light  text-dark form-control" id="miu" placeholder="Miu">
+                    <label class="text-uppercase text-white">Tasa media de servicios </label>
+                </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">s</label>
+                    <input type="number" value = 0 name="s" class="bg-light  text-dark form-control" id="s" placeholder="Servidores">
+                    <label class="text-uppercase text-white">Servidores en el sistema </label>
+                </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">k</label>
+                    <input type="number" value = 0 name="k" class="bg-light  text-dark form-control" id="k" placeholder="K">
+                    <label class="text-uppercase text-white">Número máximo de clientes </label>
+                </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">n</label>
+                    <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="n" placeholder="Numero de clientes">
+                    <label class="text-uppercase text-white">Clientes en el sistema </label>
+                </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">Tiempo</label>
+                    <input type="text" name="time" class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                    <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col text-center">
+                    <div class="form-group row">
+                        <label class="text-uppercase text-white">Cs</label>
+                        <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Costo del servicio </label>
+                    </div>
+                </div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center">
+                    <div class="form-group row">
+                        <label class="text-uppercase text-white">Cw</label>
+                        <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Costo por tiempo de espera </label>
+                    </div>
+                </div>
+            </div>
+            <blockquote class="text-center blockquote text-warning">
+                <h3>{{  validation_msg  }} </h3>
+            </blockquote>
+            <button type="submit" name="name_model" value = "MMSK" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
+        </div>
             
-        </form>
         {% endif %}
         {% if name_model == 'MG1' %}
-        <form action = "{% url 'mg1_results' %}">	
-            <div class="row p-5">
+        <div class="row p-5">
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">λ</label>
+                    <input name="l"  value = 0.0 class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
+                    <label class="text-uppercase text-white">Tasa media de llegadas </label>
+                </div>
+            </div>
+            <div class="col text-center"></div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">μ</label>
+                    <input name="miu"  value = 0.0  class="bg-light  text-dark form-control" id="k" placeholder="Miu">
+                    <label class="text-uppercase text-white">Tasa media de servicios </label>
+                </div>
+            </div>
+            <div class="col text-center"> </div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-white">σ</label>
+                    <input name="variance" value = 0.0  class="bg-light  text-dark form-control" id="variance" placeholder="Servidores">
+                    <label class="text-uppercase text-white">Varianza </label>
+                </div>
+            </div>
+            <div class="col text-center"> </div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">n</label>
+                    <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="k" placeholder="Numero de clientes">
+                    <label class="text-uppercase text-white">Clientes en el sistema </label>
+                </div>
+            </div>
+            <div class="col text-center"> </div>
+            <div class="col text-center">
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">Tiempo</label>
+                    <input type="text" name="time" class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                    <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
+                </div>
+            </div>
+            <div class="row p-3">
                 <div class="col text-center">
                     <div class="form-group row">
-                        <label class="text-white">λ</label>
-                        <input name="l"  value = 0.0 class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
-                        <label class="text-uppercase text-white">Tasa media de llegadas </label>
+                        <label class="text-uppercase text-white">Cs</label>
+                        <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Costo del servicio </label>
                     </div>
                 </div>
                 <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
-                        <label class="text-white">μ</label>
-                        <input name="miu"  value = 0.0  class="bg-light  text-dark form-control" id="k" placeholder="Miu">
-                        <label class="text-uppercase text-white">Tasa media de servicios </label>
+                        <label class="text-uppercase text-white">Cw</label>
+                        <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Costo por tiempo de espera </label>
                     </div>
                 </div>
-                <div class="col text-center"> </div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-white">σ</label>
-                        <input name="variance" value = 0.0  class="bg-light  text-dark form-control" id="variance" placeholder="Servidores">
-                        <label class="text-uppercase text-white">Varianza </label>
-                    </div>
-                </div>
-                <div class="col text-center"> </div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">n</label>
-                        <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="k" placeholder="Numero de clientes">
-                        <label class="text-uppercase text-white">Clientes en el sistema </label>
-                    </div>
-                </div>
-                <div class="col text-center"> </div>
-                <div class="col text-center">
-                    <div class="form-group row">
-                        <label class="text-uppercase text-white">Tiempo</label>
-                        <input type="text" name="time" class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                        <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
-                    </div>
-                </div>
-                <div class="row p-3">
-                    <div class="col text-center">
-                        <div class="form-group row">
-                            <label class="text-uppercase text-white">Cs</label>
-                            <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                            <label class="text-uppercase text-white">Costo del servicio </label>
-                        </div>
-                    </div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center"></div>
-                    <div class="col text-center">
-                        <div class="form-group row">
-                            <label class="text-uppercase text-white">Cw</label>
-                            <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
-                            <label class="text-uppercase text-white">Costo por tiempo de espera </label>
-                        </div>
-                    </div>
-                </div>
-                <blockquote class="text-center blockquote text-warning">
-                    <h3>{{  validation_msg  }} </h3>
-                </blockquote>
-                <button type="submit" name="name_model" value = "MG1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
             </div>
-            
-        </form>
+            <blockquote class="text-center blockquote text-warning">
+                <h3>{{  validation_msg  }} </h3>
+            </blockquote>
+            <button type="submit" name="name_model" value = "MG1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
+        </div>
+        
+        
         {% endif %}
+        </form>
     </div>
 </body>
