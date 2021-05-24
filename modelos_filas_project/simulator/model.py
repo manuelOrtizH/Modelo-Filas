@@ -9,7 +9,7 @@ class Model:
         elif name_model == 'MMSK':
             self.model = mmsk.MMSK(args[0], args[1], args[2], args[3], args[4], args[5])
         elif name_model == 'MG1':
-            self.model = mg1.MG1(args[0], args[1], args[2], args[3])
+            self.model = mg1.MG1(args[0], args[1], args[2], args[3], args[4])
 
     def totalCost(self, cw, cs):
         return round(self.model.lq*cw+self.model.s*cs, 3)

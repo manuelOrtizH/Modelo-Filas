@@ -16,9 +16,9 @@ class MM1(object):
         self.pPer = round(self.p * 100, 3)
         self.po = self.calculatePo()
         self.poPer = round(self.po * 100,3)
-        self.cn = self.calculateCn(n)[n-1]
+        self.cn = self.calculateCn(n)
         self.cnPer = round(self.cn * 100, 3)
-        self.pn = self.calculatePn(n)[n-1]
+        self.pn = self.calculatePn(n)
         self.pnPer = round(self.pn * 100, 3)
         self.lq = self.calculateLQ()
         self.L = self.calculateL()
@@ -32,10 +32,10 @@ class MM1(object):
         return round(1-self.p, 3)
 
     def calculateCn(self, n):
-        return [round(math.pow(self.p, i+1),3) for i in range(n)]
+        return round(math.pow(self.p, n),3)
 
     def calculatePn(self, n):
-        return [round(math.pow(self.p, i+1)* self.po,3) for i in range(n)]
+        return round(math.pow(self.p, n)* self.po,3)
 
     def calculateLQ(self):
         return round((self.l*self.l)/(self.miu*(self.miu-self.l)),3)

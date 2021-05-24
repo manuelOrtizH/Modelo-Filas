@@ -16,9 +16,9 @@ class MMS(object):
         self.poPer = round(self.po * 100,3)
         self.lq = self.calculateLQ()
         self.L=self.calculateL()
-        self.pn=self.calculatePn(n)[n-1]
+        self.pn=self.calculatePn(n)
         self.pnPer = round(self.pn*100,3)
-        self.cn=self.calculateCn(n)[n-1]
+        self.cn=self.calculateCn(n)
         self.cnPer = round(self.cn * 100, 3)
         self.wq=self.calculateWq()
         self.w=self.calculateW()
@@ -41,7 +41,7 @@ class MMS(object):
         return pn
 
     def calculatePn(self,n):
-        return [round(self.getPn(i),3) for i in range(n)]
+        return round(self.getPn(n),3)
 
     def getCn(self,i):
         if(i+1<self.s):
@@ -51,7 +51,7 @@ class MMS(object):
         return cn
 
     def calculateCn(self,n):
-        return [round(self.getCn(i),3) for i in range(n)]
+        return round(self.getCn(n),3)
     
     def calculateLQ(self):
         return round(((math.pow(self.l/self.miu, 2)*self.p)/(factorial(self.s)*(math.pow(1-self.p,2)))),3)

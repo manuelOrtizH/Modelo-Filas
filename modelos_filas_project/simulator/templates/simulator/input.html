@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<body style="background: linear-gradient(to right, #00BFFF,#2F4F4F)">
-    <div class="container">
+<body style="background: linear-gradient(to left, #FF1493,#8B0000)">
+    <div class="container blockquote">
         <div class="buttons mx-auto mt-5 w-50">
             <figure class="text-center">
                 <blockquote class="blockquote text-white">
-                    <h1>{{ name_model }}</h1>
+                    <h1>Modelo {{ name_model }}</h1>
                     <h2>Ingresar datos</h2>
                 </blockquote>
 
@@ -13,20 +13,27 @@
         {% if name_model == 'MM1' %}
         <form action = "{% url 'mm1_results' %}">	
             <div class="row p-5">
+                
                 <div class="col text-center">
                     <div class="form-group row">
-                        <label class="text-white">λ (clientes/unidad de tiempo)</label>
-                        <input type="number" value = 0 name="l" class="bg-light  text-dark form-control" id="l" placeholder="Lambda">
+                        <label class="text-white">λ</label>
+                        <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="l" placeholder="Lambda">
                         <label class="text-uppercase text-white">Tasa media de llegadas </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
-                        <label class="text-white">μ (clientes/unidad de tiempo)</label>
-                        <input type="number" value = 0 name="miu" class="bg-light  text-dark form-control" id="miu" placeholder="Miu">
+                        <label class="text-white">μ</label>
+                        <input name="miu" value = 0.0  class="bg-light  text-dark form-control" id="miu" placeholder="Miu">
                         <label class="text-uppercase text-white">Tasa media de servicios </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-uppercase text-white">n</label>
@@ -34,10 +41,38 @@
                         <label class="text-uppercase text-white">Clientes en el sistema </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
-                        <label class="text-uppercase text-white">Unidad de tiempo</label>
+                        <label class="text-uppercase text-white">Tiempo</label>
                         <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
+                    </div>
+                </div>
+                
+                <div class="row p-3">
+                    <div class="col text-center">
+                        <div class="form-group row">
+                            <label class="text-uppercase text-white">Cs</label>
+                            <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                            <label class="text-uppercase text-white">Costo del servicio </label>
+                        </div>
+                    </div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center">
+                        <div class="form-group row">
+                            <label class="text-uppercase text-white">Cw</label>
+                            <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                            <label class="text-uppercase text-white">Costo por tiempo de espera </label>
+                        </div>
                     </div>
                 </div>
                 <blockquote class="text-center blockquote text-warning">
@@ -54,17 +89,19 @@
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">λ</label>
-                        <input type="number" value = 0 name="l" class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
+                        <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
                         <label class="text-uppercase text-white">Tasa media de llegadas </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">μ</label>
-                        <input type="number" value = 0 name="miu" class="bg-light  text-dark form-control" id="k" placeholder="Miu">
+                        <input name="miu" value = 0.0 class="bg-light  text-dark form-control" id="k" placeholder="Miu">
                         <label class="text-uppercase text-white">Tasa media de servicios </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">s</label>
@@ -72,6 +109,7 @@
                         <label class="text-uppercase text-white">Servidores en el sistema</label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-uppercase text-white">n</label>
@@ -79,10 +117,35 @@
                         <label class="text-uppercase text-white">Clientes en el sistema </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
-                        <label class="text-uppercase text-white">Unidad de tiempo</label>
+                        <label class="text-uppercase text-white">Tiempo</label>
                         <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col text-center">
+                        <div class="form-group row">
+                            <label class="text-uppercase text-white">Cs</label>
+                            <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                            <label class="text-uppercase text-white">Costo del servicio </label>
+                        </div>
+                    </div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center">
+                        <div class="form-group row">
+                            <label class="text-uppercase text-white">Cw</label>
+                            <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                            <label class="text-uppercase text-white">Costo por tiempo de espera </label>
+                        </div>
                     </div>
                 </div>
                 <blockquote class="text-center blockquote text-warning">
@@ -99,42 +162,71 @@
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">λ</label>
-                        <input type="number" value = 0 name="l" class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
+                        <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="l" placeholder="Lambda">
                         <label class="text-uppercase text-white">Tasa media de llegadas </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">μ</label>
-                        <input type="number" value = 0 name="miu" class="bg-light  text-dark form-control" id="k" placeholder="Miu">
+                        <input name="miu" value = 0.0  class="bg-light  text-dark form-control" id="miu" placeholder="Miu">
                         <label class="text-uppercase text-white">Tasa media de servicios </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">s</label>
-                        <input type="number" value = 0 name="s" class="bg-light  text-dark form-control" id="k" placeholder="Servidores">
+                        <input type="number" value = 0 name="s" class="bg-light  text-dark form-control" id="s" placeholder="Servidores">
                         <label class="text-uppercase text-white">Servidores en el sistema </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-uppercase text-white">k</label>
-                        <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="k" placeholder="K">
+                        <input type="number" value = 0 name="k" class="bg-light  text-dark form-control" id="k" placeholder="K">
                         <label class="text-uppercase text-white">Número máximo de clientes </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-uppercase text-white">n</label>
-                        <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="k" placeholder="Numero de clientes">
+                        <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="n" placeholder="Numero de clientes">
                         <label class="text-uppercase text-white">Clientes en el sistema </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
-                        <label class="text-uppercase text-white">Unidad de tiempo</label>
-                        <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Tiempo</label>
+                        <input type="text" name="time" class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col text-center">
+                        <div class="form-group row">
+                            <label class="text-uppercase text-white">Cs</label>
+                            <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                            <label class="text-uppercase text-white">Costo del servicio </label>
+                        </div>
+                    </div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center">
+                        <div class="form-group row">
+                            <label class="text-uppercase text-white">Cw</label>
+                            <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                            <label class="text-uppercase text-white">Costo por tiempo de espera </label>
+                        </div>
                     </div>
                 </div>
                 <blockquote class="text-center blockquote text-warning">
@@ -151,24 +243,27 @@
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">λ</label>
-                        <input type="number" value = 0 name="l" class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
+                        <input name="l"  value = 0.0 class="bg-light  text-dark form-control" id="k" placeholder="Lambda">
                         <label class="text-uppercase text-white">Tasa media de llegadas </label>
                     </div>
                 </div>
+                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">μ</label>
-                        <input type="number" value = 0 name="miu" class="bg-light  text-dark form-control" id="k" placeholder="Miu">
+                        <input name="miu"  value = 0.0  class="bg-light  text-dark form-control" id="k" placeholder="Miu">
                         <label class="text-uppercase text-white">Tasa media de servicios </label>
                     </div>
                 </div>
+                <div class="col text-center"> </div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-white">σ</label>
-                        <input type="number" value = 0 name="variance" class="bg-light  text-dark form-control" id="variance" placeholder="Servidores">
+                        <input name="variance" value = 0.0  class="bg-light  text-dark form-control" id="variance" placeholder="Servidores">
                         <label class="text-uppercase text-white">Varianza </label>
                     </div>
                 </div>
+                <div class="col text-center"> </div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-uppercase text-white">n</label>
@@ -176,10 +271,35 @@
                         <label class="text-uppercase text-white">Clientes en el sistema </label>
                     </div>
                 </div>
+                <div class="col text-center"> </div>
                 <div class="col text-center">
                     <div class="form-group row">
-                        <label class="text-uppercase text-white">Unidad de tiempo</label>
-                        <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Tiempo</label>
+                        <input type="text" name="time" class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                        <label class="text-uppercase text-white">Unidades de tiempo (segs/mins/hrs) </label>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col text-center">
+                        <div class="form-group row">
+                            <label class="text-uppercase text-white">Cs</label>
+                            <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                            <label class="text-uppercase text-white">Costo del servicio </label>
+                        </div>
+                    </div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center">
+                        <div class="form-group row">
+                            <label class="text-uppercase text-white">Cw</label>
+                            <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Unidad de tiempo">
+                            <label class="text-uppercase text-white">Costo por tiempo de espera </label>
+                        </div>
                     </div>
                 </div>
                 <blockquote class="text-center blockquote text-warning">

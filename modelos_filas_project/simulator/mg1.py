@@ -3,14 +3,17 @@ class MG1(object):
     def __init__(self, l, miu, variance ,n, time):
         #Constructor para inicializar todos los atributos
         self.l = l
+        self.n = n
         self.miu = miu
         self.s = 1
         self.variance = variance
         self.time = time
         self.p = self.calculateP()
+        self.pPer = round(self.p * 100, 3)
         self.po = self.calculatePo()
         self.poPer = round(self.po * 100,3)
         self.pn = self.calculatePn(n)
+        self.pnPer = round(self.pn * 100,3)
         self.lq = self.calculateLq()
         self.wq = self.calculateWq()
         self.w = self.calculateW()
@@ -23,10 +26,10 @@ class MG1(object):
         return 1 - self.p
 
     def calculatePn(self, n):
-        return [math.pow(self.p, i+1) * self.po for i in range(n)]
+        return round(math.pow(self.p, n) * self.po,3)
 
     def calculateLq(self):
-        return (((self.l * self.l) * self.variance + (self.p * self.p)) / (2*(1-self.p)) )
+        return (((self.l * self.l) * (self.variance*self.variance) + (self.p * self.p)) / (2*(1-self.p)) )
 
     def calculateWq(self):
         return self.lq/self.l
