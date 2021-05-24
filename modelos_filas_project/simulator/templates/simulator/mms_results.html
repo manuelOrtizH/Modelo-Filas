@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body style="background: linear-gradient(to right, #00BFFF,#2F4F4F)">
+    <div class="container">
+        <div class="buttons mx-auto mt-5 w-50">
+            <figure class="text-center">
+                <blockquote class="blockquote text-white">
+                    <h1>{{ name_model }}</h1>
+                    <h2>Resultados</h2>
+                </blockquote>
+            </figure>
+        </div>
+        <div class="mt-5">
+            <table class="table table-striped ">
+                <thead>
+                    <tr class="text-center text-warning text-uppercase">
+                        <th>Símbolo</th>
+                        <th>Operación</th>
+                        <th>Valores</th>
+                        <th>Significado</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+
+                    <tr class="table-info  ">
+                        <th scope="row" class="font-italic">𝜌</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/NjJjGwz/Screen-Shot-2021-05-23-at-22-45-43.png" width="100" height="70"></td>
+                        <td class="font-italic">𝜆 = {{ model.l }},<br> s = {{ model.s }}, <br> 𝜇 = {{ model.miu }} </td>
+                        <td>Factor de uso del sistema</td>
+                        <td>{{ model.p }} <br>ó<br> {{ model.pPer }}%</td>
+                    </tr>
+                    <tr class="text-white  ">
+                        <th scope="row" class="font-italic">Cn</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/WHrVWHx/cnformula.png" width="100" height="50"></td>
+                        <td class="font-italic">𝜌 = {{ model.p }}, <br>n = {{ model.n }} </td>
+                        <td>...</td>
+                        <td>{{ model.cn }} <br>ó<br> {{ model.cnPer }}%</td>
+                    </tr>
+                    <tr class="table-info  ">
+                        <th scope="row" class="font-italic">Po</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/fNB6fN9/mm1Po.png" width="100" height="40"></td>
+                        <td class="font-italic">𝜌 = {{ model.p }}</td>
+                        <td>Probabilidad que existan 0 clientes <br> en el sistema</td>
+                        <td>{{ model.po }} <br>ó<br> {{ model.poPer }}%</td>
+                    </tr>     
+                    <tr class="text-white">
+                        <th scope="row" class="font-italic">Pn</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/hMQXhkd/mm1Pn.png" width="100" height="40"></td>
+                        <td class="font-italic">𝜌 = {{ model.p }}, <br>n = {{ model.n }}, <br> Po = {{ model.po }} </td>
+                        <td>Probabilidad que se encuentren <br>n clientes en el sistema</td>
+                        <td>{{ model.pn }} <br>ó<br> {{ model.pnPer }}%</td>
+                    </tr>     
+                    <tr class="table-info">
+                        <th scope="row" class="font-italic">L</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/25SZyr1/mm1L.png" width="100" height="50"></td>
+                        <td class="font-italic">𝜆 = {{ model.l }}, <br> 𝜇 = {{ model.miu }} </td>
+                        <td>Número promedio de clientes <br> en el sistema</td>
+                        <td>{{ model.L }} <br> clientes</td>
+                    </tr>    
+                    <tr class="text-white">
+                        <th scope="row" class="font-italic">Lq</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/khwwqKw/mm1Lq.png" width="100" height="50"></td>
+                        <td class="font-italic">𝜆 = {{ model.l }}, <br> 𝜇 = {{ model.miu }} </td>
+                        <td>Número promedio de clientes <br> haciendo fila</td>
+                        <td>{{ model.lq }} <br> clientes</td>
+                    </tr>    
+                    <tr class="table-info">
+                        <th scope="row" class="font-italic">W</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/Fbs2kqQ/mm1W.png" width="100" height="50"></td>
+                        <td class="font-italic">𝜆 = {{ model.l }}, <br> 𝜇 = {{ model.miu }}</td>
+                        <td>Tiempo promedio<br> en el sistema</td>
+                        <td>{{ model.w }} <br> {{ model.time }} </td>
+                    </tr>    
+                    <tr class="text-white">
+                        <th scope="row" class="font-italic">Wq</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/hW5w5wy/mm1Wq.png" width="100" height="50"></td>
+                        <td class="font-italic">𝜆 = {{ model.l }}, <br> 𝜇 = {{ model.miu }}</td>
+                        <td>Tiempo promedio de los clientes <br> haciendo fila</td>
+                        <td>{{ model.wq }} <br> {{ model.time }}</td>
+                    </tr>    
+                </tbody>
+            </table>
+        </div>    
+    </div>
+</body>

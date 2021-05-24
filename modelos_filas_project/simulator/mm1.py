@@ -5,14 +5,21 @@ class MM1(object):
     #miu (µ) = tasa media de servicios
     #p (𝜌) = factor de utilización de la instalación del servicio
     #lq es algo
-    def __init__(self, l, miu, n):
+    def __init__(self, l, miu, n, time):
         #Constructor para inicializar todos los atributos
         self.l = l #λ
         self.miu = miu #µ time = 20 minutos
+        self.s = 1
+        self.n = n
+        self.time = time
         self.p = self.calculateP() #𝜌 
+        self.pPer = round(self.p * 100, 3)
         self.po = self.calculatePo()
-        self.cn = self.calculateCn(n)
-        self.pn = self.calculatePn(n)
+        self.poPer = round(self.po * 100,3)
+        self.cn = self.calculateCn(n)[n-1]
+        self.cnPer = round(self.cn * 100, 3)
+        self.pn = self.calculatePn(n)[n-1]
+        self.pnPer = round(self.pn * 100, 3)
         self.lq = self.calculateLQ()
         self.L = self.calculateL()
         self.wq = self.calculateWq()

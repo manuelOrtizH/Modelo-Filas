@@ -1,12 +1,15 @@
 import math
 class MG1(object):
-    def __init__(self, l, miu, n):
+    def __init__(self, l, miu, variance ,n, time):
         #Constructor para inicializar todos los atributos
         self.l = l
         self.miu = miu
-        self.variance = 0 #math.pow(1/(self.miu*self.miu),2)
+        self.s = 1
+        self.variance = variance
+        self.time = time
         self.p = self.calculateP()
         self.po = self.calculatePo()
+        self.poPer = round(self.po * 100,3)
         self.pn = self.calculatePn(n)
         self.lq = self.calculateLq()
         self.wq = self.calculateWq()

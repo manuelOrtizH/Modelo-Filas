@@ -1,1 +1,46 @@
-Este proyecto funciona correctamente
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body style="background: linear-gradient(to right, #00BFFF,#2F4F4F)">
+    <div class="container">
+        <div class="buttons mx-auto mt-5 w-50">
+            <figure class="text-center">
+                <blockquote class="blockquote text-white">
+                    <h1>Simulador de modelos de filas de espera</h1>
+                </blockquote>
+                <figcaption class="blockquote-footer text-white">
+                    Equipo: 
+                    <cite title="Source Title">Omar Robledo, Aldo Ortiz, Enrique Orduña, Manuel Ortiz, Diego Ramírez</cite>
+                    <br>
+                    <cite title="Source Title">Tecnológico de Monterrey</cite>
+                    <br>
+                    <cite title="Source Title">Campus Ciudad de México</cite>
+                    <br>
+                    <cite title="Source Title">Profr. Leopoldo Cendejas Morales</cite>
+                </figcaption>
+            </figure>
+            <form action="{% url 'input' %}">
+                <div class="row p-4">
+                    <div class="col text-center">
+                        <button type="submit" name="name_model" class="btn btn-primary btn-rounded btn-lg  btn-block" value="MM1">MM1</button>
+                    </div>
+                </div>
+            
+                <div class="row p-4">
+                    <div class="col text-center">
+                        <button type="submit" name="name_model" class="btn btn-success btn-rounded btn-lg btn-block" value="MMS">MMS</button>
+                    </div>
+                </div>
+            
+                <div class="row p-4">
+                    <div class="col text-center">
+                        <button type="submit" name="name_model" class="btn btn-warning btn-rounded btn-lg  btn-block" value="MMSK">MMSK</button>
+                    </div>
+                </div>
+            
+                <div class="row p-4">
+                    <div class="col text-center">
+                        <button type="submit" name="name_model" class="btn btn-danger btn-rounded btn-lg  btn-block" value="MG1">MG1</button>
+                    </div>
+                </div>
+            
+    </div>
+</body>

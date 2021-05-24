@@ -3,17 +3,23 @@ from math import factorial
 from fractions import Fraction
 
 class MMS(object):
-    def __init__(self,l,miu,n,s):
+    def __init__(self,l,miu,s,n, time):
         #Constructor para inicializar todos los atributos
         self.l = l #λ
         self.s = s #s
+        self.n = n
+        self.time = time
         self.miu = miu #µ time = 20 minutos
         self.p = self.calculateP()
+        self.pPer = round(self.p * 100, 3)
         self.po=self.calculatePo()
+        self.poPer = round(self.po * 100,3)
         self.lq = self.calculateLQ()
         self.L=self.calculateL()
-        self.pn=self.calculatePn(n)
-        self.cn=self.calculateCn(n)
+        self.pn=self.calculatePn(n)[n-1]
+        self.pnPer = round(self.pn*100,3)
+        self.cn=self.calculateCn(n)[n-1]
+        self.cnPer = round(self.cn * 100, 3)
         self.wq=self.calculateWq()
         self.w=self.calculateW()
     
