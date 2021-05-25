@@ -36,17 +36,19 @@
                     <tr class="table-light" >
                         <th scope="row" class="font-italic">Cn</th>
                         <td class="font-italic"><img src="https://i.ibb.co/3yXhvZT/mm1Cn.png" width="100" height="50"></td>
-                        <td class="blockquote">Factor de utilización por cada n cliente en el sistema</td>
+                        <td class="blockquote">Factor de utilización por cada <p class="font-italic">n</p> clientes en el sistema</td>
                         <td class="blockquote text-dark" > 
                             <p>
-                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseCn" aria-expanded="false" aria-controls="collapseCn">
                                 Mostrar resultados para {{ model.n }} clientes
                                 </button>
                             </p>
-                            <div class="collapse" id="collapseExample">
+                            <div class="collapse" id="collapseCn">
+                                {% for cn in model.cn %}
                                 <div class="card card-body">
-                                {{ model.cn.0 }}
+                                C({{ forloop.counter }}) : {{ cn }}
                                 </div>
+                                {% endfor %}
                             </div> 
                         </td>
                     </tr>
@@ -60,7 +62,20 @@
                         <th scope="row" class="font-italic">Pn</th>
                         <td class="font-italic"><img src="https://i.ibb.co/pRjKkZD/mm1Pn.png" width="110" height="50"></td>
                         <td class="blockquote">Probabilidad que se encuentren <br>{{ model.n }} clientes en el sistema</td>
-                        <td class="blockquote text-dark">{{ model.pn }} </td>
+                        <td class="blockquote text-dark"> 
+                            <p>
+                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapsePn" aria-expanded="false" aria-controls="collapsePn">
+                                Mostrar resultados para {{ model.n }} clientes
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapsePn">
+                                {% for pn in model.pn %}
+                                <div class="card card-body">
+                                P({{ forloop.counter }}) : {{ pn }}
+                                </div>
+                                {% endfor %}
+                            </div> 
+                        </td>
                     </tr>     
                     <tr class="table-info">
                         <th scope="row" class="font-italic">Lq</th>
@@ -100,7 +115,7 @@
                     <tr class="table-light">
                         <th scope="row" class="font-italic">Cn</th>
                         <td class="font-italic"><img src="https://i.ibb.co/PgyFjGy/mmsCn.png" width="150" height="170"></td>
-                        <td class="blockquote">...</td>
+                        <td class="blockquote">Factor de utilización por cada <p class="font-italic">n</p> clientes en el sistema</td>
                         <td class="blockquote text-dark">{{ model.cn }} <br>ó<br> {{ model.cnPer }}%</td>
                     </tr>
                     <tr class="table-info  ">
@@ -153,7 +168,7 @@
                     <tr class="table-light">
                         <th scope="row" class="font-italic">Cn</th>
                         <td class="font-italic"><img src="https://i.ibb.co/kJxQRMJ/mmskCn.png" width="270" height="200"></td>
-                        <td class="blockquote">...</td>
+                        <td class="blockquote">Factor de utilización por cada <p class="font-italic">n</p> clientes en el sistema</td>
                         <td class="blockquote text-dark">{{ model.cn }} <br>ó<br> {{ model.cnPer }}%</td>
                     </tr>
                     <tr class="table-info  ">
