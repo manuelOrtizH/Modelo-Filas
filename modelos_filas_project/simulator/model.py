@@ -10,19 +10,4 @@ class Model:
             self.model = mmsk.MMSK(args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7])
         elif name_model == 'MG1':
             self.model = mg1.MG1(args[0], args[1], args[2], args[3], args[4], args[5], args[6])
-
-
-
-# m_mm1 = Model('MM1', 2, 3, 4)
-# print('MM1: ')
-# print(m_mm1.model, '\n')
-# m_mms = Model('MMS', 100, 60, 0, 2)
-# print('MMS: ')
-# print(m_mms.model, '\n')
-# m_mmsk = Model('MMSK', 2, 3, 3, 1,3)
-# print('MMSK:')
-# print(m_mmsk.model, '\n')
-# print(m_mmsk.totalCost(20,10) ,'USD ')
         
-
-    

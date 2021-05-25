@@ -6,12 +6,13 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <body style="background: linear-gradient(to left, #FF1493,#8B0000)">
     <div class="container">
+
         <div class="buttons mx-auto mt-5 w-50">
             <figure class="text-center">
-                <blockquote class="blockquote text-white">
+                <blockquote class="blockquote text-dark">
                     <h1>Simulador de modelos de filas de espera</h1>
                 </blockquote>
-                <figcaption class="blockquote-footer text-white">
+                <figcaption class="blockquote-footer text-dark">
                     Equipo: 
                     <cite title="Source Title">Omar Robledo, Aldo Ortiz, Enrique Orduña, Manuel Ortiz, Diego Ramírez</cite>
                     <br>
@@ -22,20 +23,22 @@
                     <cite title="Source Title">Profr. Leopoldo Cendejas Morales</cite>
                 </figcaption>
             </figure>
+  
             <div class="toggle-info text-center">
                 <p>
-                    <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapsePn" aria-expanded="false" aria-controls="collapsePn">
+                    <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseInfo" aria-expanded="false" aria-controls="collapseInfo">
                     Información general
                     </button>
                 </p>
-                <div class="collapse" id="collapsePn">
-                    <div class="intro-container text-center">
-                        <img src="https://i.ibb.co/mGDKQ2z/introwhirte-4.png" width=585 height= 900>
-                        <img src="https://i.ibb.co/pZkLMsT/queues-Home-Image-1-2.png" width=600>    
+                <div class="collapse" id="collapseInfo">
+                    
+                    <div class="row">
+                        <div class="col"><img src="https://i.ibb.co/mGDKQ2z/introwhirte-4.png" width=585 height= 900></div>
+                        <div class="col"><img src="https://i.ibb.co/pZkLMsT/queues-Home-Image-1-2.png" width=600></div>
                     </div>
+                    
                 </div> 
             </div>
-            
 
             <form action="{% url 'input' %}">
                 <div class="row p-4">
@@ -64,4 +67,5 @@
 
                 
     </div>
+    
 </body>

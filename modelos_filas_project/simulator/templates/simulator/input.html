@@ -1,20 +1,47 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <body style="background: linear-gradient(to left, #FF1493,#8B0000)">
     <div class="container blockquote">
         <div class="buttons mx-auto mt-5 w-50">
             <figure class="text-center">
-                <blockquote class="blockquote text-white">
+                <blockquote class="blockquote text-dark">
                     <h1>Modelo {{ name_model }}</h1>
                     <h2>Ingresar datos</h2>
                 </blockquote>
 
             </figure>
         </div>
-        <form action = "{% url 'modelResults' %}">	
+        <form action = "{% url 'modelResults' %}">
+            <div class="text-center">
+                <p class="text-center">
+                    <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseInfo" aria-expanded="false" aria-controls="collapseInfo">
+                    Información {{ name_model }}
+                    </button>
+                </p>
+                <div class="collapse" id="collapseInfo">
+                    <div class="row text-dark text-center blockquote text-uppercase" style="display: inline;">
+                        {% if name_model == 'MM1' %}
+                        <div class="col"><img src="https://i.ibb.co/FBXJq2Q/InfoMM1.png" width=500 height= 550></div>
+                        <div class="col"><img src="https://i.ibb.co/JmLgKNT/mm1-Diagram.png" width=700 height= 250></div>
+                        {% elif name_model == 'MMS' %}
+                        <div class="col"><img src="https://i.ibb.co/1nBZKFR/Info-MMS-2.png" width=500 height= 580></div>
+                        <div class="col"><img src="https://i.ibb.co/MDcWWRT/Diagram-MG1.png" width=900 height= 300></div>
+                        {% elif name_model == 'MMSK' %}
+                        <div class="col"><img src="https://i.ibb.co/VQMgXBB/InfoMMSK.png" width=500 height= 595></div>
+                        <div class="col"><img src="https://i.ibb.co/MDcWWRT/Diagram-MG1.png" width=900 height= 300></div>
+                        {% elif name_model == 'MG1' %}
+                        <div class="col"><img src="https://i.ibb.co/KNHt814/InfoMG1.png" width=450 height= 585></div>
+                        <div class="col"><img src="https://i.ibb.co/JmLgKNT/mm1-Diagram.png" width=700 height= 250></div>
+                        {% endif %}
+                    </div>
+                </div> 
+            </div> 
         {% if name_model == 'MM1' %}
-    
         <div class="row p-5">
-            
             <div class="col text-center">
                 <div class="form-group row">
                     <label class="text-white">λ</label>
@@ -65,9 +92,6 @@
                 <div class="col text-center"></div>
                 <div class="col text-center"></div>
                 <div class="col text-center"></div>
-                <div class="col text-center"></div>
-                <div class="col text-center"></div>
-                <div class="col text-center"></div>
                 <div class="col text-center">
                     <div class="form-group row">
                         <label class="text-uppercase text-white">Cw</label>
@@ -79,12 +103,13 @@
             <blockquote class="text-center blockquote text-warning">
                 <h3>{{  validation_msg  }} </h3>
             </blockquote>
+    
+
+            
             <button type="submit" name="name_model" value = "MM1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
         </div>
-            
         {% endif %}
         {% if name_model == 'MMS' %}
-
         <div class="row p-5">
             <div class="col text-center">
                 <div class="form-group row">
