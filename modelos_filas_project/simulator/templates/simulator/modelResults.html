@@ -1,4 +1,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <body style="background: linear-gradient(to left, #FF1493,#8B0000)">
     <div class="container">
         <div class="buttons mx-auto mt-5 w-50">
@@ -28,11 +33,22 @@
                         <td class="blockquote">Factor de uso del sistema</td>
                         <td class="blockquote text-dark">{{ model.p }} <br>ó<br> {{ model.pPer }}%</td>
                     </tr>
-                    <tr class="table-light">
+                    <tr class="table-light" >
                         <th scope="row" class="font-italic">Cn</th>
                         <td class="font-italic"><img src="https://i.ibb.co/3yXhvZT/mm1Cn.png" width="100" height="50"></td>
-                        <td class="blockquote">...</td>
-                        <td class="blockquote text-dark">{{ model.cn }} </td>
+                        <td class="blockquote">Factor de utilización por cada n cliente en el sistema</td>
+                        <td class="blockquote text-dark" > 
+                            <p>
+                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Mostrar resultados para {{ model.n }} clientes
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                {{ model.cn.0 }}
+                                </div>
+                            </div> 
+                        </td>
                     </tr>
                     <tr class="table-info  ">
                         <th scope="row" class="font-italic">Po</th>
