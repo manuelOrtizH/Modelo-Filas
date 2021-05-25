@@ -14,9 +14,6 @@ def input(request):
 
 def modelResults(request):
     name_model = request.GET.get('name_model')
-    data = e.getModel(request, name_model)
-
-        
-        
+    data = e.getModel(request, name_model)       
     results = {'model': data.model, 'name_model': name_model}
     return render(request, 'simulator/modelResults.html', results)

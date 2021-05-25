@@ -3,12 +3,14 @@ from math import factorial
 
 class MMSK(object):
     #λe tasa efectiva de arrivo = λ(1-Pn)
-    def __init__(self,l,miu,s,k,n, time):
+    def __init__(self,l,miu,s,k,n, time, cw, cs):
         #Constructor para inicializar todos los atributos
         self.n=n
         self.k=k 
         self.l = l #λ
         self.s = s #s
+        self.cw = cw
+        self.cs = cs
         self.time = time
         self.miu = miu #µ time = 20 minutos
         self.po=self.calculatePo()
@@ -24,7 +26,7 @@ class MMSK(object):
         self.L=self.calculateL()
         self.pn=self.calculatePn(n)
         self.cn=self.calculateCn(n)
-        self.mean_clients = 1 - self.po
+        self.ct = self.calculateTotalCost()
     
     def calculateP(self):
         return round(self.l/(self.miu*self.s),3)        
@@ -70,6 +72,9 @@ class MMSK(object):
     
     def calculateW(self):
         return round(self.wq+(1/self.miu),3)
+
+    def calculateTotalCost(self):
+        return round(self.lq*self.cw+self.s*self.cs, 3)
 
     def __str__(self):
         #Imprimir todo los atributos

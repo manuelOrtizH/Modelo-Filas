@@ -3,16 +3,15 @@ from simulator import mm1,mms,mmsk,mg1
 class Model:
     def __init__(self, name_model, *args):
         if name_model == 'MM1':
-            self.model = mm1.MM1(args[0], args[1], args[2], args[3])
+            self.model = mm1.MM1(args[0], args[1], args[2], args[3], args[4], args[5])
         elif name_model == 'MMS':
-            self.model = mms.MMS(args[0],args[1],args[2],args[3], args[4])
+            self.model = mms.MMS(args[0],args[1],args[2],args[3], args[4], args[5], args[6])
         elif name_model == 'MMSK':
-            self.model = mmsk.MMSK(args[0], args[1], args[2], args[3], args[4], args[5])
+            self.model = mmsk.MMSK(args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7])
         elif name_model == 'MG1':
-            self.model = mg1.MG1(args[0], args[1], args[2], args[3], args[4])
+            self.model = mg1.MG1(args[0], args[1], args[2], args[3], args[4], args[5], args[6])
 
-    def totalCost(self, cw, cs):
-        return round(self.model.lq*cw+self.model.s*cs, 3)
+
 
 # m_mm1 = Model('MM1', 2, 3, 4)
 # print('MM1: ')

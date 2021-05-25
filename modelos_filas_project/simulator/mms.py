@@ -2,12 +2,14 @@ import math
 from math import factorial
 
 class MMS(object):
-    def __init__(self,l,miu,s,n, time):
+    def __init__(self,l,miu,s,n, time, cw, cs):
         #Constructor para inicializar todos los atributos
         self.l = l #λ
         self.s = s #s
         self.n = n
         self.time = time
+        self.cw = cw
+        self.cs = cs
         self.miu = miu
         self.p = self.calculateP()
         #pPer no es un atributo
@@ -21,6 +23,7 @@ class MMS(object):
         self.cn=self.calculateCn(n)
         self.wq=self.calculateWq()
         self.w=self.calculateW()
+        self.ct = self.calculateTotalCost()
     
     def calculateP(self):
         return round(self.l/(self.miu*self.s),3)
@@ -57,6 +60,10 @@ class MMS(object):
     
     def calculateW(self):
         return round(self.wq+(1/self.miu),3)
+
+    
+    def calculateTotalCost(self):
+        return round(self.lq*self.cw+self.s*self.cs, 3)
 
     def __str__(self):
         #Imprimir todo los atributos

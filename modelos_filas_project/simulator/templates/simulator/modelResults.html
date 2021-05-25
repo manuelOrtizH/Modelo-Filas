@@ -24,9 +24,8 @@
                         <th>Resultado</th>
                     </tr>
                 </thead>
-                {% if name_model == 'MM1' %}
                 <tbody class="blockquote text-center align-middle">
-
+                {% if name_model == 'MM1' %}
                     <tr class="table-info">
                         <th scope="row" class="font-italic">𝜌</th>
                         <td class="font-italic"><img src="https://i.ibb.co/R2gddJR/mm1P.png" width="100" height="70"></td>
@@ -101,11 +100,8 @@
                         <td class="blockquote">Tiempo promedio<br> en el sistema</td>
                         <td class="blockquote text-dark">{{ model.w }} <br> {{ model.time }}</td>
                     </tr>    
-                </tbody>
                 {% endif %}
                 {% if name_model == 'MMS' %}
-                <tbody class="blockquote text-center">
-
                     <tr class="table-info">
                         <th scope="row" class="font-italic">𝜌</th>
                         <td class="font-italic"><img src="https://i.ibb.co/R2gddJR/mm1P.png" width="100" height="70"></td>
@@ -180,11 +176,8 @@
                         <td class="blockquote">Tiempo promedio<br> en el sistema</td>
                         <td class="blockquote text-dark">{{ model.w }} <br> {{ model.time }}</td>
                     </tr>    
-                </tbody>
                 {% endif %}
                 {% if name_model == 'MMSK' %}
-                <tbody class="blockquote text-center">
-
                     <tr class="table-info">
                         <th scope="row" class="font-italic">𝜌</th>
                         <td class="font-italic"><img src="https://i.ibb.co/R2gddJR/mm1P.png" width="100" height="70"></td>
@@ -271,55 +264,77 @@
                         <td class="blockquote">Tasa efectiva<br> de arrivo</td>
                         <td class="blockquote text-dark">{{ model.le }} clientes/{{ model.time }} </td>
                     </tr>   
-                </tbody>
                 {% endif %}
                 {% if name_model == 'MG1' %}
-                <tbody class="blockquote text-center align-middle">
                     <tr class="table-info">
                         <th scope="row" class="font-italic">𝜌</th>
                         <td class="font-italic"><img src="https://i.ibb.co/R2gddJR/mm1P.png" width="100" height="70"></td>
                         <td class="blockquote">Factor de uso del sistema</td>
                         <td class="blockquote text-dark">{{ model.p }} <br>ó<br> {{ model.pPer }}%</td>
                     </tr>
-                    <tr class="table-info  ">
+                    <tr class="table-light">
                         <th scope="row" class="font-italic">Po</th>
                         <td class="font-italic"><img src="https://i.ibb.co/379KMKk/mm1Po.png" width="110" height="50"></td>
                         <td class="blockquote">Probabilidad que existan 0 clientes <br> en el sistema</td>
                         <td class="blockquote text-dark">{{ model.po }} <br>ó<br> {{ model.poPer }}%</td>
                     </tr>     
-                    <tr class="table-light">
+                    <tr class="table-info">
                         <th scope="row" class="font-italic">Pn</th>
                         <td class="font-italic"><img src="https://i.ibb.co/pRjKkZD/mm1Pn.png" width="110" height="40"></td>
                         <td class="blockquote">Probabilidad que se encuentren <br>{{ model.n }} clientes en el sistema</td>
-                        <td class="blockquote text-dark">{{ model.pn }} <br>ó<br> {{ model.pnPer }}%</td>
+                        <td class="blockquote text-dark">
+                            <p>
+                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseCn" aria-expanded="false" aria-controls="collapseCn">
+                                Mostrar resultados para {{ model.n }} clientes
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseCn">
+                                {% for pn in model.pn %}
+                                <div class="card card-body">
+                                P({{ forloop.counter }}) : {{ pn }}
+                                </div>
+                                {% endfor %}
+                            </div> 
+
+                        </td>
                     </tr>     
-                    <tr class="table-info">
+                    <tr class="table-light">
                         <th scope="row" class="font-italic">Lq</th>
                         <td class="font-italic"><img src="https://i.ibb.co/g4cmnqP/mg1Lq.png" width="150" height="80"></td>
                         <td class="blockquote">Número promedio de clientes <br> haciendo fila</td>
                         <td class="blockquote text-dark">{{ model.lq }} <br> clientes</td>
                     </tr>    
-                    <tr class="table-light ">
+                    <tr class="table-info ">
                         <th scope="row" class="font-italic">L</th>
                         <td class="font-italic"><img src="https://i.ibb.co/1dFbKBq/mg1L.png" width="100" height="35"></td>
                         <td class="blockquote">Número promedio de clientes <br> en el sistema</td>
                         <td class="blockquote text-dark">{{ model.L }} <br> clientes</td>
                     </tr>    
-                    <tr class="table-info">
+                    <tr class="table-light">
                         <th scope="row" class="font-italic">Wq</th>
                         <td class="font-italic"><img src="https://i.ibb.co/16zvkdC/mg1-Wq-1.png" width="110" height="60"></td>
                         <td class="blockquote">Tiempo promedio de los clientes <br> haciendo fila</td>
                         <td class="blockquote text-dark">{{ model.wq }} <br> {{ model.time }} </td>
                     </tr>    
-                    <tr class="table-light">
+                    <tr class="table-info">
                         <th scope="row" class="font-italic">W</th>
                         <td class="font-italic"><img src="https://i.ibb.co/YfMrJgc/mg1W.png" width="110" height="60"></td>
                         <td class="blockquote">Tiempo promedio<br> en el sistema</td>
                         <td class="blockquote text-dark">{{ model.w }} <br> {{ model.time }}</td>
                     </tr>    
-                </tbody>
+                
                 {% endif %}
-
+                <tr class = "bg-warning">
+                    <th scope="row" class="font-italic">Costo Total</th>
+                    <td class="font-italic"><img src="https://i.ibb.co/WDQ1bst/Ct.png" width="150" height="40"></td>
+                    <td class="blockquote">Costo total esperado<br> del servicio</td>
+                    {% if model.cw == 0.0 and model.cs == 0.0 %}
+                    <td class="blockquote text-dark">No se han ingresado precios</td>
+                    {% else %}
+                    <td class="blockquote text-dark">{{ model.ct }} <br> USD </td>
+                    {% endif %}
+                </tr>
+                </tbody>
             </table>
         </div>    
     </div>
