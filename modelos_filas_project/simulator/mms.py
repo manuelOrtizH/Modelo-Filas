@@ -33,14 +33,14 @@ class MMS(object):
         return round(1/s,3)
     
     def getPn(self,n):
-        if(n<=self.s): return (math.pow(self.l/self.miu,n)/factorial(n))*self.po;
-        elif(n>self.s): return ((math.pow((self.l/self.miu),n))/(factorial(self.s)*math.pow(self.s,(n)-self.s)))*self.po;
+        if(n<=self.s): return (math.pow(self.l/self.miu,n)/factorial(n))*self.po
+        elif(n>self.s): return ((math.pow((self.l/self.miu),n))/(factorial(self.s)*math.pow(self.s,(n)-self.s)))*self.po
 
     def calculatePn(self,n):
         return [round(self.getPn(i+1),3) for i in range(n)]
 
     def getCn(self,n):
-        if(n<self.s): return math.pow(self.l/self.miu,n)/factorial(n);
+        if(n<self.s): return math.pow(self.l/self.miu,n)/factorial(n)
         elif(n>=self.s): return math.pow(self.l/self.miu,n)/(factorial(self.s)*math.pow(self.s,(n)-self.s))
         
     def calculateCn(self,n):

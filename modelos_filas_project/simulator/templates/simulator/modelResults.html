@@ -195,7 +195,21 @@
                         <th scope="row" class="font-italic">Cn</th>
                         <td class="font-italic"><img src="https://i.ibb.co/kJxQRMJ/mmskCn.png" width="270" height="200"></td>
                         <td class="blockquote">Factor de utilización por cada <p class="font-italic">n</p> clientes en el sistema</td>
-                        <td class="blockquote text-dark">{{ model.cn }} <br>ó<br> {{ model.cnPer }}%</td>
+                        <td class="blockquote text-dark">
+                            <p>
+                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseCn" aria-expanded="false" aria-controls="collapseCn">
+                                Mostrar resultados para {{ model.n }} clientes
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseCn">
+                                {% for cn in model.cn %}
+                                <div class="card card-body">
+                                C({{ forloop.counter }}) : {{ cn }}
+                                </div>
+                                {% endfor %}
+                            </div> 
+
+                        </td>
                     </tr>
                     <tr class="table-info  ">
                         <th scope="row" class="font-italic">Po</th>
@@ -207,7 +221,25 @@
                         <th scope="row" class="font-italic">Pn</th>
                         <td class="font-italic"><img src="https://i.ibb.co/wBxq6GF/mmskPn.png" width="270" height="200"></td>
                         <td class="blockquote">Probabilidad que se encuentren <br> {{ model.n }} clientes en el sistema</td>
-                        <td class="blockquote text-dark">{{ model.pn }} <br>ó<br> {{ model.pnPer }}%</td>
+                        <td class="blockquote text-dark">
+                            <p>
+                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapsePn" aria-expanded="false" aria-controls="collapsePn">
+                                Mostrar resultados para {{ model.n }} clientes
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapsePn">
+                                {% for pn in model.pn %}
+                                <div class="card card-body">
+                                    {% if forloop.counter == model.k %}
+                                    P(K): P({{ forloop.counter }}) : {{ pn }}
+                                    {% else %}
+                                    P({{ forloop.counter }}) : {{ pn }}
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </div> 
+                            
+                        </td>
                     </tr>     
                     <tr class="table-info">
                         <th scope="row" class="font-italic">Lq</th>
@@ -243,7 +275,6 @@
                 {% endif %}
                 {% if name_model == 'MG1' %}
                 <tbody class="blockquote text-center align-middle">
-
                     <tr class="table-info">
                         <th scope="row" class="font-italic">𝜌</th>
                         <td class="font-italic"><img src="https://i.ibb.co/R2gddJR/mm1P.png" width="100" height="70"></td>
