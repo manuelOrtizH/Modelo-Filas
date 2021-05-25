@@ -1,6 +1,5 @@
 import math
 from math import factorial
-from fractions import Fraction
 
 class MMS(object):
     def __init__(self,l,miu,s,n, time):
@@ -9,17 +8,17 @@ class MMS(object):
         self.s = s #s
         self.n = n
         self.time = time
-        self.miu = miu #µ time = 20 minutos
+        self.miu = miu
         self.p = self.calculateP()
+        #pPer no es un atributo
         self.pPer = round(self.p * 100, 3)
         self.po=self.calculatePo()
+        #poPer no es un atributo
         self.poPer = round(self.po * 100,3)
         self.lq = self.calculateLQ()
         self.L=self.calculateL()
         self.pn=self.calculatePn(n)
-        self.pnPer = round(self.pn*100,3)
         self.cn=self.calculateCn(n)
-        self.cnPer = round(self.cn * 100, 3)
         self.wq=self.calculateWq()
         self.w=self.calculateW()
     
@@ -33,25 +32,19 @@ class MMS(object):
         s += (( math.pow((self.l/self.miu), self.s)/ factorial(self.s) )) * (1/(1-(self.l/(self.s*self.miu))))   
         return round(1/s,3)
     
-    def getPn(self,i):
-        if(i+1<self.s):
-            pn = (math.pow(self.l/self.miu,i+1)/factorial(i+1))*self.po
-        elif(i+1>=self.s):
-            pn = ((math.pow((self.l/self.miu),i+1))/(factorial(self.s)*math.pow(self.s,(i+1)-self.s)))*self.po
-        return pn
+    def getPn(self,n):
+        if(n<=self.s): return (math.pow(self.l/self.miu,n)/factorial(n))*self.po;
+        elif(n>self.s): return ((math.pow((self.l/self.miu),n))/(factorial(self.s)*math.pow(self.s,(n)-self.s)))*self.po;
 
     def calculatePn(self,n):
-        return round(self.getPn(n),3)
+        return [round(self.getPn(i+1),3) for i in range(n)]
 
-    def getCn(self,i):
-        if(i+1<self.s):
-            cn = math.pow(self.l/self.miu,i+1)/factorial(i+1)
-        elif(i+1>=self.s):
-            cn = math.pow(self.l/self.miu,i+1)/(factorial(self.s)*math.pow(self.s,(i+1)-self.s))
-        return cn
-
+    def getCn(self,n):
+        if(n<self.s): return math.pow(self.l/self.miu,n)/factorial(n);
+        elif(n>=self.s): return math.pow(self.l/self.miu,n)/(factorial(self.s)*math.pow(self.s,(n)-self.s))
+        
     def calculateCn(self,n):
-        return round(self.getCn(n),3)
+        return [round(self.getCn(i+1),3) for i in range(n)]
     
     def calculateLQ(self):
         return round(((math.pow(self.l/self.miu, 2)*self.p)/(factorial(self.s)*(math.pow(1-self.p,2)))),3)
