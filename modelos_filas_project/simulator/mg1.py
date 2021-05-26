@@ -30,7 +30,7 @@ class MG1(object):
         return round(1 - self.p,3)
 
     def calculatePn(self, n):
-        return [round(math.pow(self.p, i+1) * self.po,3) for i in range(n)]
+        return [round(math.pow(self.p, i+1) * self.po,6) for i in range(n)]
 
     def calculateLq(self):
         return round((((self.l * self.l) * (self.variance*self.variance) + (self.p * self.p)) / (2*(1-self.p)) ),3)

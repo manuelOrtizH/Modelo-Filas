@@ -38,10 +38,10 @@ class MM1(object):
         return round(1-self.p, 3)
 
     def calculateCn(self, n):
-        return [round(math.pow(self.p, x+1),3) for x in range(n)]
+        return [round(math.pow(self.p, x+1),6) for x in range(n)]
 
     def calculatePn(self, n):
-        return [round(math.pow(self.p, x+1)* self.po,3) for x in range(n)]
+        return [round(math.pow(self.p, x+1)* self.po,6) for x in range(n)]
 
     def calculateLQ(self):
         return round((self.l*self.l)/(self.miu*(self.miu-self.l)),3)

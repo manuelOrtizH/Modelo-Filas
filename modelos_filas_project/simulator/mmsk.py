@@ -48,7 +48,7 @@ class MMSK(object):
         elif(n>self.k): return 0
 
     def calculatePn(self,n):
-        return [round(self.getPn(i+1),3) for i in range(n)]
+        return [round(self.getPn(i+1),6) for i in range(n)]
 
     def getCn(self,n):
         if(n<self.s): return math.pow(self.l/self.miu,n)/factorial(n)
@@ -56,7 +56,7 @@ class MMSK(object):
         elif(n>self.k): return 0
 
     def calculateCn(self,n):
-        return [round(self.getCn(i+1),3) for i in range(n)]
+        return [round(self.getCn(i+1),6) for i in range(n)]
     
     def calculateLQ(self):
         return round((self.po*((math.pow(self.l/self.miu,self.s)*self.p)/(factorial(self.s)*(math.pow(1-self.p,2)))))*(1-math.pow(self.p,self.k-self.s)-(self.k-self.s)*math.pow(self.p,self.k-self.s)*(1-self.p)),3)

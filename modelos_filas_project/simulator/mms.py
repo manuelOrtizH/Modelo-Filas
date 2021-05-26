@@ -40,14 +40,14 @@ class MMS(object):
         elif(n>self.s): return ((math.pow((self.l/self.miu),n))/(factorial(self.s)*math.pow(self.s,(n)-self.s)))*self.po
 
     def calculatePn(self,n):
-        return [round(self.getPn(i+1),3) for i in range(n)]
+        return [round(self.getPn(i+1),6) for i in range(n)]
 
     def getCn(self,n):
         if(n<self.s): return math.pow(self.l/self.miu,n)/factorial(n)
         elif(n>=self.s): return math.pow(self.l/self.miu,n)/(factorial(self.s)*math.pow(self.s,(n)-self.s))
         
     def calculateCn(self,n):
-        return [round(self.getCn(i+1),3) for i in range(n)]
+        return [round(self.getCn(i+1),6) for i in range(n)]
     
     def calculateLQ(self):
         return round(((math.pow(self.l/self.miu, 2)*self.p)/(factorial(self.s)*(math.pow(1-self.p,2)))),3)
