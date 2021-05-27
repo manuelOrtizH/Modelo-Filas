@@ -50,7 +50,7 @@ class MMS(object):
         return [round(self.getCn(i+1),6) for i in range(n)]
     
     def calculateLQ(self):
-        return round(((math.pow(self.l/self.miu, 2)*self.p)/(factorial(self.s)*(math.pow(1-self.p,2)))),3)
+        return round((self.po*(math.pow(self.l/self.miu, 2)*self.p)/(factorial(self.s)*(math.pow(1-self.p,2)))),3)
     
     def calculateL(self):
         return round(self.lq+(self.l/self.miu),3)

@@ -44,7 +44,6 @@ class MG1(object):
     def calculateL(self):
         return round(self.l * self.w,3)
 
-    
     def calculateTotalCost(self):
         return round(self.lq*self.cw+self.s*self.cs, 3)
 
