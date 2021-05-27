@@ -9,7 +9,19 @@
         <div class="buttons mx-auto mt-5 w-50">
             <figure class="text-center">
                 <blockquote class="blockquote text-white">
-                    <h1>Modelo {{ name_model }}</h1>
+                    {% if name_model == 'MM1' %}
+                    <h1>M/M/1</h1>
+                    {% elif name_model == 'MMS' %}
+                    <h1>M/M/S</h1>
+                    {% elif name_model == 'MMSK' %}
+                    <h1>M/M/S/K</h1>
+                    {% elif name_model == 'MG1' %}
+                    <h1>M/G/1</h1>
+                    {% elif name_model == 'MD1' %}
+                    <h1>M/D/1</h1>
+                    {% elif name_model == 'ME1' %}
+                    <h1>M/Ek/1</h1>
+                    {% endif %}
                     <h2>Resultados</h2>
                 </blockquote>
             </figure>
@@ -301,6 +313,124 @@
                     <tr class="table-light">
                         <th scope="row" class="font-italic">Lq</th>
                         <td class="font-italic"><img src="https://i.ibb.co/g4cmnqP/mg1Lq.png" width="150" height="80"></td>
+                        <td class="blockquote">Número promedio de clientes <br> haciendo fila</td>
+                        <td class="blockquote text-dark">{{ model.lq }} <br> clientes</td>
+                    </tr>    
+                    <tr class="table-info ">
+                        <th scope="row" class="font-italic">L</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/1dFbKBq/mg1L.png" width="100" height="35"></td>
+                        <td class="blockquote">Número promedio de clientes <br> en el sistema</td>
+                        <td class="blockquote text-dark">{{ model.L }} <br> clientes</td>
+                    </tr>    
+                    <tr class="table-light">
+                        <th scope="row" class="font-italic">Wq</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/16zvkdC/mg1-Wq-1.png" width="110" height="60"></td>
+                        <td class="blockquote">Tiempo promedio de los clientes <br> haciendo fila</td>
+                        <td class="blockquote text-dark">{{ model.wq }} <br> {{ model.time }} </td>
+                    </tr>    
+                    <tr class="table-info">
+                        <th scope="row" class="font-italic">W</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/YfMrJgc/mg1W.png" width="110" height="60"></td>
+                        <td class="blockquote">Tiempo promedio<br> en el sistema</td>
+                        <td class="blockquote text-dark">{{ model.w }} <br> {{ model.time }}</td>
+                    </tr>    
+                
+                {% endif %}
+                {% if name_model == 'ME1' %}
+                    <tr class="table-info">
+                        <th scope="row" class="font-italic">𝜌</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/R2gddJR/mm1P.png" width="100" height="70"></td>
+                        <td class="blockquote">Factor de uso del sistema</td>
+                        <td class="blockquote text-dark">{{ model.p }} <br>ó<br> {{ model.pPer }}%</td>
+                    </tr>
+                    <tr class="table-light">
+                        <th scope="row" class="font-italic">Po</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/379KMKk/mm1Po.png" width="110" height="50"></td>
+                        <td class="blockquote">Probabilidad que existan 0 clientes <br> en el sistema</td>
+                        <td class="blockquote text-dark">{{ model.po }} <br>ó<br> {{ model.poPer }}%</td>
+                    </tr>     
+                    <tr class="table-info">
+                        <th scope="row" class="font-italic">Pn</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/pRjKkZD/mm1Pn.png" width="110" height="40"></td>
+                        <td class="blockquote">Probabilidad que se encuentren <br>{{ model.n }} clientes en el sistema</td>
+                        <td class="blockquote text-dark">
+                            <p>
+                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseCn" aria-expanded="false" aria-controls="collapseCn">
+                                Mostrar resultados para {{ model.n }} clientes
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseCn">
+                                {% for pn in model.pn %}
+                                <div class="card card-body">
+                                P({{ forloop.counter }}) : {{ pn }}
+                                </div>
+                                {% endfor %}
+                            </div> 
+
+                        </td>
+                    </tr>     
+                    <tr class="table-light">
+                        <th scope="row" class="font-italic">Lq</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/fCnMj39/me1Lq.png" width="150" height="80"></td>
+                        <td class="blockquote">Número promedio de clientes <br> haciendo fila</td>
+                        <td class="blockquote text-dark">{{ model.lq }} <br> clientes</td>
+                    </tr>    
+                    <tr class="table-info ">
+                        <th scope="row" class="font-italic">L</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/N2f26CG/me1L.png" width="100" height="35"></td>
+                        <td class="blockquote">Número promedio de clientes <br> en el sistema</td>
+                        <td class="blockquote text-dark">{{ model.L }} <br> clientes</td>
+                    </tr>    
+                    <tr class="table-light">
+                        <th scope="row" class="font-italic">Wq</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/16zvkdC/mg1-Wq-1.png" width="110" height="60"></td>
+                        <td class="blockquote">Tiempo promedio de los clientes <br> haciendo fila</td>
+                        <td class="blockquote text-dark">{{ model.wq }} <br> {{ model.time }} </td>
+                    </tr>    
+                    <tr class="table-info">
+                        <th scope="row" class="font-italic">W</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/YfMrJgc/mg1W.png" width="110" height="60"></td>
+                        <td class="blockquote">Tiempo promedio<br> en el sistema</td>
+                        <td class="blockquote text-dark">{{ model.w }} <br> {{ model.time }}</td>
+                    </tr>    
+                
+                {% endif %}
+                {% if name_model == 'MD1' %}
+                    <tr class="table-info">
+                        <th scope="row" class="font-italic">𝜌</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/R2gddJR/mm1P.png" width="100" height="70"></td>
+                        <td class="blockquote">Factor de uso del sistema</td>
+                        <td class="blockquote text-dark">{{ model.p }} <br>ó<br> {{ model.pPer }}%</td>
+                    </tr>
+                    <tr class="table-light">
+                        <th scope="row" class="font-italic">Po</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/379KMKk/mm1Po.png" width="110" height="50"></td>
+                        <td class="blockquote">Probabilidad que existan 0 clientes <br> en el sistema</td>
+                        <td class="blockquote text-dark">{{ model.po }} <br>ó<br> {{ model.poPer }}%</td>
+                    </tr>     
+                    <tr class="table-info">
+                        <th scope="row" class="font-italic">Pn</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/pRjKkZD/mm1Pn.png" width="110" height="40"></td>
+                        <td class="blockquote">Probabilidad que se encuentren <br>{{ model.n }} clientes en el sistema</td>
+                        <td class="blockquote text-dark">
+                            <p>
+                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseCn" aria-expanded="false" aria-controls="collapseCn">
+                                Mostrar resultados para {{ model.n }} clientes
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseCn">
+                                {% for pn in model.pn %}
+                                <div class="card card-body">
+                                P({{ forloop.counter }}) : {{ pn }}
+                                </div>
+                                {% endfor %}
+                            </div> 
+
+                        </td>
+                    </tr>     
+                    <tr class="table-light">
+                        <th scope="row" class="font-italic">Lq</th>
+                        <td class="font-italic"><img src="https://i.ibb.co/ryr7tdV/md1lq.png" width="150" height="80"></td>
                         <td class="blockquote">Número promedio de clientes <br> haciendo fila</td>
                         <td class="blockquote text-dark">{{ model.lq }} <br> clientes</td>
                     </tr>    

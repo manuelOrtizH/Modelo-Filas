@@ -7,9 +7,22 @@
 <body style="background: linear-gradient(to left, #FF1493,#8B0000)">
     <div class="container blockquote">
         <div class="buttons mx-auto mt-5 w-50">
-            <figure class="text-center">
-                <blockquote class="blockquote text-dark">
-                    <h1>Modelo {{ name_model }}</h1>
+            <figure class="text-center text-white">
+                <blockquote class="blockquote text-white">
+                    {% if name_model == 'MM1' %}
+                    <h1>M/M/1</h1>
+                    {% elif name_model == 'MMS' %}
+                    <h1>M/M/S</h1>
+                    {% elif name_model == 'MMSK' %}
+                    <h1>M/M/S/K</h1>
+                    {% elif name_model == 'MG1' %}
+                    <h1>M/G/1</h1>
+                    {% elif name_model == 'MD1' %}
+                    <h1>M/D/1</h1>
+                    {% elif name_model == 'ME1' %}
+                    <h1>M/Ek/1</h1>
+                    {% endif %}
+                    
                     <h2>Ingresar datos</h2>
                 </blockquote>
 
@@ -36,80 +49,113 @@
                         {% elif name_model == 'MG1' %}
                         <div class="col"><img src="https://i.ibb.co/KNHt814/InfoMG1.png" width=450 height= 585></div>
                         <div class="col"><img src="https://i.ibb.co/JmLgKNT/mm1-Diagram.png" width=700 height= 250></div>
+                        {% elif name_model == 'ME1' %}
+                        <div class="col"><img src="https://i.ibb.co/xS0cQQZ/infoMEK1.png" width=450 height= 585></div>
+                        <div class="col"><img src="https://i.ibb.co/JmLgKNT/mm1-Diagram.png" width=700 height= 250></div>
+                        {% elif name_model == 'MD1' %}
+                        <div class="col"><img src="https://i.ibb.co/j6kk3bX/InfoMD1.png" width=450 height= 585></div>
+                        <div class="col"><img src="https://i.ibb.co/JmLgKNT/mm1-Diagram.png" width=700 height= 250></div>
                         {% endif %}
                     </div>
                 </div> 
             </div> 
+            <blockquote class="text-center blockquote text-warning">
+                <h3>{{  validation_msg  }}  </h3>
+            </blockquote>
         <div class="row p-5">
             <div class="col text-center">
                 <div class="form-group row">
                     <label class="text-white">λ</label>
                     <input name="l" value = 0.0  class="bg-light  text-dark form-control" id="l" placeholder="Lambda">
-                    <label class="text-uppercase text-warning">Tasa media de llegadas. Número de cleintes esperados por unidad de tiempo. </label>
+                    <label class="text-uppercase text-white">Tasa media de llegadas. Número de cleintes esperados por unidad de tiempo. </label>
                 </div>
                 <div class="form-group row">
                     <label class="text-white">μ</label>
                     <input name="miu" value = 0.0  class="bg-light  text-dark form-control" id="miu" placeholder="Miu">
-                    <label class="text-uppercase text-warning">Tasa media de servicios. Número de clientes que completan el servicio por unidad de tiempo. </label>
+                    <label class="text-uppercase text-white">Tasa media de servicios. Número de clientes que completan el servicio por unidad de tiempo. </label>
                 </div>
                 <div class="form-group row">
                     <label class="text-uppercase text-white">n</label>
                     <input type="number" value = 0 name="n" class="bg-light  text-dark form-control" id="n" placeholder="Número de clientes">
-                    <label class="text-uppercase text-warning">Número de clientes en el sistema </label>
+                    <label class="text-uppercase text-white">Número de clientes en el sistema </label>
                 </div>
                 <div class="form-group row">
                     <label class="text-uppercase text-white">Tiempo</label>
                     <input type="text" name="time" class="bg-light  text-dark form-control" id="k" placeholder="Unidad de tiempo">
-                    <label class="text-uppercase text-warning">Unidades de tiempo (seg/min/hrs). </label>
+                    <label class="text-uppercase text-white">Unidades de tiempo (seg/min/hrs). </label>
                 </div>
                 <div class="form-group row">
                     <label class="text-uppercase text-white">Cs</label>
                     <input name="cs" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Cs">
-                    <label class="text-uppercase text-warning">Costo estimado del servicio. </label>
+                    <label class="text-uppercase text-white">Costo estimado del servicio. </label>
                 </div>
                 <div class="form-group row">
                     <label class="text-uppercase text-white">Cw</label>
                     <input name="cw" value=0.0 class="bg-light  text-dark form-control" id="time" placeholder="Cw">
-                    <label class="text-uppercase text-warning">Costo por tiempo de espera que existe en el sistema. </label>
+                    <label class="text-uppercase text-white">Costo por tiempo de espera que existe en el sistema. </label>
                 </div>
+   
         {% if name_model == 'MM1' %}
+  
             </div>
+
             <button type="submit" name="name_model" value = "MM1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
+        {% endif %}
+
+        {% if name_model == 'MD1' %}
+        <button type="submit" name="name_model" value = "MD1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
         {% endif %}
         {% if name_model == 'MMS' %}            
                 <div class="form-group row">
                     <label class="text-white">s</label>
                     <input type="number" value = 0 name="s" class="bg-light  text-dark form-control" id="k" placeholder="Servidores">
-                    <label class="text-uppercase text-warning">Número de servidores que existen en el sistema</label>
+                    <label class="text-uppercase text-white">Número de servidores que existen en el sistema</label>
                 </div>
+  
             </div>
+
             <button type="submit" name="name_model" value = "MMS" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
         {% endif %}
         {% if name_model == 'MMSK' %}	
                 <div class="form-group row">
                     <label class="text-white">s</label>
                     <input type="number" value = 0 name="s" class="bg-light  text-dark form-control" id="s" placeholder="Servidores">
-                    <label class="text-uppercase text-warning">Número de servidores que existen en el sistema. </label>
+                    <label class="text-uppercase text-white">Número de servidores que existen en el sistema. </label>
                 </div>
             
                 <div class="form-group row">
                     <label class="text-uppercase text-white">K</label>
                     <input type="number" value = 0 name="k" class="bg-light  text-dark form-control" id="k" placeholder="K">
-                    <label class="text-uppercase text-warning">Número máximo de clientes que soporta el sistema. </label>
-                </div>
-            
+                    <label class="text-uppercase text-white">Número máximo de clientes que soporta el sistema. </label>
+                </div> 
             </div>
+
             <button type="submit" name="name_model" value = "MMSK" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
+        {% endif %}
+
+        {% if name_model == 'ME1' %}
+                <div class="form-group row">
+                    <label class="text-uppercase text-white">K</label>
+                    <input type="number" value = 0 name="k" class="bg-light  text-dark form-control" id="k" placeholder="K">
+                    <label class="text-uppercase text-white">Número máximo de clientes que soporta el sistema. </label>
+                </div> 
+            </div>
+                    
+            <button type="submit" name="name_model" value = "ME1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>
         {% endif %}
         {% if name_model == 'MG1' %}
                 <div class="form-group row">
                     <label class="text-white">σ</label>
                     <input name="variance" value = 0.0  class="bg-light  text-dark form-control" id="variance" placeholder="Servidores">
-                    <label class="text-uppercase text-warning">Desviación estándar del sistema. </label>
+                    <label class="text-uppercase text-white">Desviación estándar del sistema. </label>
+                    
                 </div>
+  
             </div>
+  
             <button type="submit" name="name_model" value = "MG1" class="btn btn-warning btn-rounded btn-lg  btn-block" >Ingresar datos</button>    
         {% endif %}
+
         </div>
         </form>
     </div>

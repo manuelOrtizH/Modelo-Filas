@@ -24,7 +24,9 @@ class MMS(object):
         self.wq=self.calculateWq()
         self.w=self.calculateW()
         self.ct = self.calculateTotalCost()
-    
+        self.k = 0
+        self.variance = 0
+
     def calculateP(self):
         return round(self.l/(self.miu*self.s),3)
 

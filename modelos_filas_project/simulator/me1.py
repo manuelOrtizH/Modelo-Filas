@@ -1,14 +1,15 @@
 import math
-class MG1(object):
-    def __init__(self, l, miu, variance ,n, time, cw, cs):
+class ME1(object):
+    def __init__(self, l, miu, k ,n, time, cw, cs):
         #Constructor para inicializar todos los atributos
         self.l = l
         self.n = n
         self.miu = miu
         self.s = 1
+        self.k = k
         self.cw = cw 
         self.cs = cs
-        self.variance = variance
+        self.variance = 0
         self.time = time
         self.p = self.calculateP()
         #pPer no es atributo
@@ -22,7 +23,7 @@ class MG1(object):
         self.w = self.calculateW()
         self.L = self.calculateL()
         self.ct = self.calculateTotalCost()
-        self.k = 0
+        
 
     def calculateP(self):
         return round(self.l/self.miu,3)
@@ -34,7 +35,10 @@ class MG1(object):
         return [round(math.pow(self.p, i+1) * self.po,6) for i in range(n)]
 
     def calculateLq(self):
-        return round((((self.l * self.l) * (self.variance*self.variance) + (self.p * self.p)) / (2*(1-self.p)) ),3)
+        return round( ((1+self.k)/(2*self.k)) * ((self.l * self.l)/(self.miu*(self.miu - self.l))),3)
+
+    def calculateL(self):
+        return round(self.l * self.w,3)
 
     def calculateWq(self):
         return round(self.lq/self.l,3)
@@ -42,8 +46,7 @@ class MG1(object):
     def calculateW(self):
         return round(self.wq + (1/self.miu),3)
 
-    def calculateL(self):
-        return round(self.p + self.lq,3)
+
 
     def calculateTotalCost(self):
         return round(self.lq*self.cw+self.s*self.cs, 3)

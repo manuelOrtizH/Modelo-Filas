@@ -9,10 +9,10 @@
 
         <div class="buttons mx-auto mt-5 w-50">
             <figure class="text-center">
-                <blockquote class="blockquote text-dark">
+                <blockquote class="blockquote text-white">
                     <h1>Simulador de modelos de filas de espera</h1>
                 </blockquote>
-                <figcaption class="blockquote-footer text-dark">
+                <figcaption class="blockquote-footer text-white">
                     Equipo: 
                     <cite title="Source Title">Omar Robledo, Aldo Ortiz, Enrique Orduña, Manuel Ortiz, Diego Ramírez</cite>
                     <br>
@@ -43,25 +43,37 @@
             <form action="{% url 'input' %}">
                 <div class="row p-4">
                     <div class="col text-center">
-                        <button type="submit" name="name_model" class="btn btn-primary btn-rounded btn-lg  btn-block" value="MM1">MM1</button>
+                        <button type="submit" name="name_model" class="btn btn-primary btn-rounded btn-lg  btn-block" value="MM1">M/M/1</button>
                     </div>
                 </div>
             
                 <div class="row p-4">
                     <div class="col text-center">
-                        <button type="submit" name="name_model" class="btn btn-success btn-rounded btn-lg btn-block" value="MMS">MMS</button>
+                        <button type="submit" name="name_model" class="btn btn-success btn-rounded btn-lg btn-block" value="MMS">M/M/S</button>
                     </div>
                 </div>
             
                 <div class="row p-4">
                     <div class="col text-center">
-                        <button type="submit" name="name_model" class="btn btn-warning btn-rounded btn-lg  btn-block" value="MMSK">MMSK</button>
+                        <button type="submit" name="name_model" class="btn btn-warning btn-rounded btn-lg  btn-block" value="MMSK">M/M/S/K</button>
                     </div>
                 </div>
             
                 <div class="row p-4">
                     <div class="col text-center">
-                        <button type="submit" name="name_model" class="btn btn-danger btn-rounded btn-lg  btn-block" value="MG1">MG1</button>
+                        <button type="submit" name="name_model" class="btn btn-danger btn-rounded btn-lg  btn-block" value="MG1">M/G/1</button>
+                    </div>
+                </div>
+
+                <div class="row p-4">
+                    <div class="col text-center">
+                        <button type="submit" name="name_model" class="btn btn-info btn-rounded btn-lg  btn-block" value="ME1">M/Ek/1</button>
+                    </div>
+                </div>
+
+                <div class="row p-4">
+                    <div class="col text-center">
+                        <button type="submit" name="name_model" class="btn btn-secondary btn-rounded btn-lg  btn-block" value="MD1">M/D/1</button>
                     </div>
                 </div>
 

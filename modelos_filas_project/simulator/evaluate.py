@@ -17,3 +17,10 @@ def getModel(request, name_model):
         return m.Model(name_model, float(request.GET.get('l')), 
                float(request.GET.get('miu')), float(request.GET.get('variance')), 
                int(request.GET.get('n')), request.GET.get('time'), cw, cs)
+    elif name_model == 'ME1':
+        return m.Model(name_model, float(request.GET.get('l')), 
+               float(request.GET.get('miu')), float(request.GET.get('k')), 
+               int(request.GET.get('n')), request.GET.get('time'), cw, cs)
+    elif name_model == 'MD1':
+        return m.Model(name_model, float(request.GET.get('l')), 
+               float(request.GET.get('miu')), int(request.GET.get('n')), request.GET.get('time'), cw, cs)

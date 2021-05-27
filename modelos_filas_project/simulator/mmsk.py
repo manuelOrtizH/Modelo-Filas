@@ -27,6 +27,7 @@ class MMSK(object):
         self.pn=self.calculatePn(n)
         self.cn=self.calculateCn(n)
         self.ct = self.calculateTotalCost()
+        self.variance = 0
     
     def calculateP(self):
         return round(self.l/(self.miu*self.s),3)        

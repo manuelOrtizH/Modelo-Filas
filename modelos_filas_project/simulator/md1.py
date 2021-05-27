@@ -1,6 +1,6 @@
 import math
 
-class MM1(object):
+class MD1(object):
     #lambda = tasa media de llegadas
     #miu (µ) = tasa media de servicios
     #p (𝜌) = factor de utilización de la instalación del servicio
@@ -8,7 +8,7 @@ class MM1(object):
     def __init__(self, l, miu, n, time, cw, cs):
         #Constructor para inicializar todos los atributos
         self.l = l #λ
-        self.miu = miu #λµ time = 20 minutos
+        self.miu = miu #µ time = 20 minutos
         self.s = 1
         self.n = n
         self.time = time
@@ -19,7 +19,7 @@ class MM1(object):
         self.pPer = round(self.p * 100, 3)
         self.po = self.calculatePo()
         self.poPer = round(self.po * 100,3)
-        self.cn = self.calculateCn(n)
+        #self.cn = self.calculateCn(n)
         #cnPer no es un atributo
         #self.cnPer = round(self.cn * 100, 3)
         self.pn = self.calculatePn(n)
@@ -39,23 +39,20 @@ class MM1(object):
     def calculatePo(self):
         return round(1-self.p, 3)
 
-    def calculateCn(self, n):
-        return [round(math.pow(self.p, x+1),6) for x in range(n)]
-
     def calculatePn(self, n):
         return [round(math.pow(self.p, x+1)* self.po,6) for x in range(n)]
 
     def calculateLQ(self):
-        return round((self.l*self.l)/(self.miu*(self.miu-self.l)),3)
+        return round((self.p * self.p)/(2*(1-self.p)),3)
 
     def calculateL(self):
-        return round(self.l/(self.miu - self.l),3)
+        return round((self.p + self.lq),3)
     
     def calculateWq(self):
-        return round(self.l/(self.miu * (self.miu - self.l)),3)
+        return round( self.lq/self.l ,3)
 
     def calculateW(self):
-        return round(1/(self.miu - self.l) , 3)
+        return round(self.wq + (1/(self.miu)) , 3)
 
     def calculateTotalCost(self):
         return round(self.lq*self.cw+self.s*self.cs, 3)
